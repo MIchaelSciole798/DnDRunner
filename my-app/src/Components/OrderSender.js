@@ -1,23 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import Select from 'react-select'
+import CaramelList from './CaramelList';
 
 export default class OrderSender extends React.Component {
     state = {
         amount: null,
         type:'',
     };
-
-    state = {
-        caramels: [],
-    };
-
-    componentDidMount() {
-        axios.get('https://my-json-server.typicode.com/MIchaelSciole798/DnDRunner/caramels').then(res => {
-            console.log(res);
-            this.setState({ caramels: res.data });
-        });
-    }
 
     handleChange = event => 
     {
@@ -53,7 +43,7 @@ export default class OrderSender extends React.Component {
                 </label>
                 <label>
                     Type to send:
-                    <Select options={this.state.caramels.flavor} />
+                    <Select options={CaramelList} />
                 </label>
                 <button type="submit">Order!</button>
             </form>
