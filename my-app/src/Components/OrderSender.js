@@ -9,11 +9,6 @@ export default class OrderSender extends React.Component {
         type:'',
     };
 
-    handleChange = event => 
-    {
-        this.setState({ amount: event.target.value });
-    }
-
     handleSubmit = event => 
     {
         event.preventDefault();
@@ -23,6 +18,9 @@ export default class OrderSender extends React.Component {
             amount: this.state.amount,
             type: this.state.type,
         }
+
+        this.setState({ amount: event.target.value });
+        this.setState({type: event.target.value })
 
         axios
             .post("https://my-json-server.typicode.com/MIchaelSciole798/DnDRunner/orders", { order })
@@ -39,11 +37,12 @@ export default class OrderSender extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Amount to send:
-                    <input type="number" name="amount" onChange={this.handleChange}/>
+                    <input type="number" name="amount"/>
                 </label>
                 <label>
-                    Type to send:
-                    <Select options={CaramelList} />
+                    Flavor Desired:
+                    <CaramelList/>
+                    <input type="list" name="type"/>
                 </label>
                 <button type="submit">Order!</button>
             </form>
