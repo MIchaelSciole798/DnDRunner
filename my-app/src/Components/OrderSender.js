@@ -1,20 +1,17 @@
 import React from 'react';
 import axios from 'axios';
-import Select from 'react-select'
 import CaramelList from './CaramelList';
 
 export default class OrderSender extends React.Component {
     state = {
-        order: [{
-           amount: null,
+            amount: null,
             type:'', 
-        }]
     };
 
     handleChange = event => 
     {
         this.setState({ amount: event.target.value });
-        this.setState({type: event.target.value })
+        this.setState({ type: event.target.value })
     }
 
     handleSubmit = event => 
@@ -28,7 +25,7 @@ export default class OrderSender extends React.Component {
         }
 
         axios
-            .put("https://my-json-server.typicode.com/MIchaelSciole798/DnDRunner/orders", { order })
+            .post("https://my-json-server.typicode.com/MIchaelSciole798/DnDRunner/orders", { order })
             .then(res => 
                 {
                     console.log(res);

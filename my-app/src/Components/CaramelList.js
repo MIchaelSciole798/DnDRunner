@@ -17,7 +17,13 @@ export default class CaramelList extends React.Component {
     {
         return (
             <ul>
-                { this.state.caramels.map(caramel => <li>Type: {caramel.flavor}....Quantity per box: {caramel.quantity}....Price per box: {caramel.price}</li>)}
+                { 
+                    this.state.caramels.map(caramel => 
+                    <li>Type: {caramel.flavor}
+                    ....Quantity per box: {caramel.quantity}
+                    ....Price per box: {caramel.price}
+                    </li>
+                )}
             </ul>
         )
     }
