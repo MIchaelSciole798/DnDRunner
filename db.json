@@ -7,6 +7,6 @@
     ],
 
     "orders":[
-        {"amount":null, "type":""}
+        {"id": 0, "amount":null, "type":""}
     ]
 }
