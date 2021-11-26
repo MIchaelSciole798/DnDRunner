@@ -1,0 +1,8 @@
+{
+    "caramels":[
+        {"flavor":"Original", "quantity":8},
+        {"flavor":"Chocolate", "quantity":8},
+        {"flavor":"Bourbon", "quantity":8},
+        {"flavor":"Sea Salt", "quantity":8}
+    ]
+}
