@@ -4,5 +4,9 @@
         {"flavor":"Chocolate", "quantity":8, "price":8},
         {"flavor":"Bourbon", "quantity":8, "price":8},
         {"flavor":"Sea Salt", "quantity":8, "price":8}
+    ],
+
+    "orders":[
+        {"amount":null, "type":""}
     ]
 }

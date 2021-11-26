@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import CaramelList from './Components/CaramelList';
+import OrderSender from './Components/OrderSender';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         </a>
       </header>
       <CaramelList />
+      <OrderSender />
     </div>
   );
 }
