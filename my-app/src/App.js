@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import CaramelList from './Components/CaramelList';
 import OrderSender from './Components/OrderSender';
 
 
@@ -21,7 +20,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <CaramelList />
       <OrderSender />
     </div>
   );
