@@ -53,7 +53,7 @@ export default class OrderSender extends React.Component {
                 </label>
                 <label>
                     Type to send:
-                    <Select options={this.state.caramels.type} />
+                    <Select options={this.state.caramels.flavor} />
                 </label>
                 <button type="submit">Order!</button>
             </form>
