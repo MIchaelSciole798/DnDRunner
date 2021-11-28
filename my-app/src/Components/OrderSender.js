@@ -4,14 +4,24 @@ import CaramelList from './CaramelList';
 
 export default class OrderSender extends React.Component {
     state = {
+            id: 0,
             amount: null,
             type:'', 
     };
 
-    handleChange = event => 
+    handleChangeAmt = event => 
     {
         this.setState({ amount: event.target.value });
+    }
+
+    handleChangeType = event => 
+    {
         this.setState({ type: event.target.value })
+    }
+
+    setOrder = event =>
+    {
+        this.setState({ id: this.state.id + 1})
     }
 
     handleSubmit = event => 
@@ -20,6 +30,7 @@ export default class OrderSender extends React.Component {
 
         const order = 
         {
+            id: this.state.id,
             amount: this.state.amount,
             type: this.state.type,
         }
@@ -36,15 +47,15 @@ export default class OrderSender extends React.Component {
     render()
     {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.setOrder & this.handleSubmit}>
                 <label>
                     Amount to send:
-                    <input type="number" name="amount" onChange={this.handleChange}/>
+                    <input type="number" name="amount" onChange={this.handleChangeAmt}/>
                 </label>
                 <label>
                     Flavor Desired:
                     <CaramelList/>
-                    <input type="text" name="type" onChange={this.handleChange}/>
+                    <input type="text" name="type" onChange={this.handleChangeType}/>
                 </label>
                 <button type="submit">Order!</button>
             </form>
